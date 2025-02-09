@@ -3,22 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
+    <title>Arnay's Blog</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Blog</h1>
+        <div class="container">
+            <nav>
+                <a href="/" class="logo">Arnay's Blog</a>
+                <div class="nav-links">
+                    <a href="/" class="active">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </nav>
+        </div>
     </header>
-    <main>
-        <article>
-            <h2>First Blog Post</h2>
-            <p>Hi I am Arnay.<br>
-            This is my first blog post. More content coming soon!</p>
-        </article>
+
+    <main class="container">
+        <div class="page-title">
+            <h1>Welcome to My Blog</h1>
+            <p class="subtitle">Exploring ideas, sharing insights</p>
+        </div>
+        
+        <div class="blog-grid">
+            <div class="empty-state">
+                <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" fill="none" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="12" y1="18" x2="12" y2="12"></line>
+                    <line x1="9" y1="15" x2="15" y2="15"></line>
+                </svg>
+                <h2>No Blog Posts Yet</h2>
+                <p>The journey begins soon. Check back for new content!</p>
+            </div>
+        </div>
     </main>
+
     <footer>
-        <p>&copy; 2024 Arnay Nanda</p>
+        <div class="container">
+            <p>© 2025 Arnay's Blog. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
