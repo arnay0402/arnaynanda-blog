@@ -1,13 +1,14 @@
 :root {
-    --primary-color: #565869;
-    --secondary-color: #6B6C7B;
-    --background-color: #FFFFFF;
-    --surface-color: #F9FAFB;
-    --text-primary: #1A1A1A;
-    --text-secondary: #4A5568;
-    --border-color: #E2E8F0;
-    --accent-color: #5850EC;
+    --background-color: #F6F5F1;  /* Claude's actual background color */
+    --surface-color: #FFFFFF;     /* White for cards and elevated surfaces */
+    --primary-color: #1A1A1A;     /* Dark text color */
+    --secondary-color: #565869;   /* Secondary text color */
+    --border-color: #E2E2E0;      /* Subtle border color matching Claude's theme */
+    --accent-color: #C85439;      /* Claude's accent color (for interactive elements) */
+    --hover-color: #D66347;       /* Slightly lighter version of accent for hover states */
     --header-height: 64px;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -19,7 +20,7 @@
 
 body {
     background-color: var(--background-color);
-    color: var(--text-primary);
+    color: var(--primary-color);
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
@@ -35,11 +36,12 @@ body {
 /* Header Styles */
 header {
     height: var(--header-height);
-    background-color: var(--background-color);
+    background-color: var(--surface-color);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: var(--shadow-sm);
 }
 
 nav {
@@ -52,7 +54,7 @@ nav {
 .logo {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--primary-color);
     text-decoration: none;
     letter-spacing: -0.025em;
 }
@@ -64,7 +66,7 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-secondary);
+    color: var(--secondary-color);
     font-weight: 500;
     font-size: 0.95rem;
     transition: color 0.2s ease;
@@ -72,7 +74,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
+    color: var(--accent-color);
 }
 
 .nav-links a.active {
@@ -93,13 +95,13 @@ main {
 .page-title h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--primary-color);
     letter-spacing: -0.025em;
     margin-bottom: 0.5rem;
 }
 
 .subtitle {
-    color: var(--text-secondary);
+    color: var(--secondary-color);
     font-size: 1.1rem;
 }
 
@@ -114,37 +116,40 @@ main {
 .empty-state {
     text-align: center;
     padding: 4rem 0;
-    color: var(--text-secondary);
+    color: var(--secondary-color);
     grid-column: 1 / -1;
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
 }
 
 .empty-state svg {
     margin-bottom: 1.5rem;
-    color: var(--text-secondary);
+    color: var(--secondary-color);
 }
 
 .empty-state h2 {
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--primary-color);
 }
 
 .empty-state p {
-    color: var(--text-secondary);
+    color: var(--secondary-color);
 }
 
 /* Blog Post Card */
 .blog-post {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .blog-post:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-md);
 }
 
 .blog-post img {
@@ -161,11 +166,11 @@ main {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    color: var(--primary-color);
 }
 
 .blog-post p {
-    color: var(--text-secondary);
+    color: var(--secondary-color);
     font-size: 0.95rem;
 }
 
@@ -173,9 +178,10 @@ main {
 footer {
     border-top: 1px solid var(--border-color);
     padding: 2rem 0;
-    color: var(--text-secondary);
+    color: var(--secondary-color);
     font-size: 0.9rem;
     text-align: center;
+    background-color: var(--surface-color);
 }
 
 /* Responsive Design */
